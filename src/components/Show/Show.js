@@ -19,7 +19,6 @@ class Show extends Component {
   }
 
   render() {
-    console.log('render')
     const {
       data,
       data: { image, name, genres, summary }
