@@ -5,7 +5,6 @@ import './Show.css';
 
 class Show extends Component {
   state = {
-    showId: '',
     data: {}
   };
 
@@ -13,7 +12,7 @@ class Show extends Component {
     const { showId } = this.props;
     if (showId !== '') {
       getShowInfo(showId).then(data => {
-        this.setState({ data, showId: showId });
+        this.setState({ data });
       });
     }
   }
