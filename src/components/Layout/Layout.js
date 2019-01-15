@@ -1,4 +1,4 @@
-import React, { Fragment, PureComponent, Component } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import SectionTitle from '../SectionTitle';
 import './Layout.css';
 

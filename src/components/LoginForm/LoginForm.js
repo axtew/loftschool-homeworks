@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import './LoginForm.css';
-import Button from '../Button'
+import Button from '../Button';
 
 const fields = [
   {
@@ -34,9 +34,12 @@ class LoginForm extends PureComponent {
     const {
       values: { email, password }
     } = this.state;
-    const { authorize } = this.props;
+    const { authorize, setAuthorizeError } = this.props;
+    console.log(setAuthorizeError);
 
-    authorize(email, password);
+    email !== '' && password !== ''
+      ? authorize(email, password)
+      : setAuthorizeError('Логиин/пароль не введён');
   };
 
   render() {

@@ -12,13 +12,14 @@ class App extends PureComponent {
       <AuthProvider>
         <Layout header={Header} footer={Footer}>
           <AuthConsumer>
-            {({ isAuthorized, authorize, authorizeError }) =>
+            {({ isAuthorized, authorize, authorizeError, setAuthorizeError }) =>
               isAuthorized ? (
                 <Congratulations />
               ) : (
                 <LoginForm
                   authorize={authorize}
                   authorizeError={authorizeError}
+                  setAuthorizeError={setAuthorizeError}
                 />
               )
             }

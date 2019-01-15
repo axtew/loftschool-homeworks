@@ -23,17 +23,25 @@ class AuthProvider extends PureComponent {
         });
   };
 
+  setAuthorizeError = error => {
+    console.log(error)
+    this.setState({ authorizeError: error });
+  };
+
   logout = () => {
-    this.setState({ isAuthorized: false });
+    this.setState({ isAuthorized: false, email: '', password: '' });
   };
 
   getProviderValue = () => {
-    let providerValueKeys = {
-      email: this.state.email,
-      isAuthorized: this.state.isAuthorized,
-      authorizeError: this.state.authorizeError,
+    const { email, isAuthorized, authorizeError } = this.state;
+
+    const providerValueKeys = {
+      email: email,
+      isAuthorized: isAuthorized,
+      authorizeError: authorizeError,
       authorize: this.authorize,
-      logout: this.logout
+      logout: this.logout,
+      setAuthorizeError: this.setAuthorizeError
     };
     return providerValueKeys;
   };
