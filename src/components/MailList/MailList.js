@@ -7,8 +7,6 @@ class MailList extends Component {
   render() {
     const { data, match, type } = this.props;
 
-    // console.log(data.substr(0, 15))
-
     return (
       <div className={`${styles.container} ${type === 'inbox' ? 't-inbox-list' : 't-outbox-list'}`}>
         {data.map(mail => (
